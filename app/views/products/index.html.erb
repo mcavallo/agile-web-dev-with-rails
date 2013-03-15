@@ -11,7 +11,7 @@
   <tbody>
   <% @products.each do |product| %>
     <tr>
-      <td><%= image_tag product.image_url, :class => 'list-image' %></td>
+      <td class="image-column"><%= image_tag product.image_url %></td>
       <td>
         <dl>
           <dt><%= product.title %></dt>

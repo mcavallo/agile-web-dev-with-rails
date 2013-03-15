@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Depot</title>
+  <title>Generic Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
-
+	<div id="wrap">
+		<div class="container">
+		  <div class="masthead">
+		  	<h3 class="muted">Generic Store</h3>
+		    <div class="navbar">
+		      <div class="navbar-inner">
+		        <div class="container">
+		          <ul class="nav">
+		            <li class="active"><a href="#">Home</a></li>
+		            <li><a href="#">Questions</a></li>
+		            <li><a href="#">News</a></li>
+		            <li><a href="#">Contact</a></li>
+		          </ul>
+		        </div>
+		      </div>
+		    </div><!-- /.navbar -->
+		  </div><!-- /.masthead -->
+			<div class="main">				
+				<%= yield %>
+			</div><!-- /.main -->
+		</div><!-- /.container -->
+		<div id="push"></div>
+	</div><!-- /.wrap -->	
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="copyright span6">&copy; <%= DateTime.now.year %> Generic Store</div>
+				<div class="time span6"><%= DateTime.now %></div>
+			</div>
+		</div>		
+	</div>
 </body>
 </html>

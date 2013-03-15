@@ -19,10 +19,15 @@ table td.price-column {
 	font-size: 16px;
 }
 
-img.list-image {
+table td.image-column {
+	width: 60px;
+	text-align: center;
+	vertical-align: middle;
+	img {
 	width: 50px;
 	height: 50px;
 	border: 1px solid #999;
+}
 }
 
 table dl,
