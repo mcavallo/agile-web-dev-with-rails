@@ -1,13 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  title: MyString
-  description: MyText
-  image_url: MyString
+all_valid:
+  title: iPad
+  description: <p>Some description</p>
+  image_url: file.jpg
   price: 9.99
 
-two:
-  title: MyString
-  description: MyText
-  image_url: MyString
+missing_title:
+  title: 
+  description: <p>Some description</p>
+  image_url: file.jpg
   price: 9.99
+
+invalid_image_extension:
+  title: iPad
+  description: <p>Some description</p>
+  image_url: file.txt
+  price: 9.99
+
+invalid_price:
+  title: iPad
+  description: <p>Some description</p>
+  image_url: file.txt
+  price: -5
