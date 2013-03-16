@@ -6,6 +6,11 @@ h1 {
 	margin-top: 0;
 }
 
+form.button_to,
+form.button_to div {
+  display: inline;
+}
+
 .clearfix:after {
 	content: ".";
 	display: block;
@@ -27,9 +32,14 @@ html[xmlns] .clearfix {
 	height: 1%;
 }
 
-body {
-  padding-top: 20px;
-  padding-bottom: 60px;
+#notice {
+  border: 1px solid #999;
+  font-style: italic;
+  padding: 5px 8px;
+  background: #f4f4f4
+}
+
+.btn-pack .btn {
 }
 
 /* Html - Body */

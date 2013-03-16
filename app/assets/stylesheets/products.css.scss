@@ -2,44 +2,63 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-table th.centered {
-	text-align: center;
-}
-
-table td.actions-column {
-	width: 120px;
-	text-align: center;
-	vertical-align: middle;
-}
-
-table td.price-column {
-	width: 80px;
-	text-align: center;
-	vertical-align: middle;
-	font-size: 16px;
-}
-
-table td.image-column {
-	width: 60px;
-	text-align: center;
-	vertical-align: middle;
-	img {
-	width: 50px;
-	height: 50px;
-	border: 1px solid #999;
-}
-}
-
-table dl,
-table dt,
-table dd {
-	margin: 0;
-	padding: 0;
-}
-
-table dt {
-	font-weight: bold;
-	font-size: 16px;
+table {
+	th.centered {
+		text-align: center;
+	}
+	td.amount-column {
+		width: 40px;
+		text-align: center;
+		vertical-align: middle;
+	}
+	td.actions-column {
+		width: 120px;
+		text-align: center;
+		vertical-align: middle;
+	}
+	td.price-column {
+		width: 80px;
+		text-align: center;
+		vertical-align: middle;
+		font-size: 16px;
+	}
+	td.image-column {
+		width: 60px;
+		text-align: center;
+		vertical-align: middle;
+		img {
+			width: 50px;
+			height: 50px;
+			border: 1px solid #999;
+		}
+	}
+	td.total-cell,
+	td.total-amount-cell {
+		vertical-align: middle;
+		font-weight: bold;
+		font-size: 16px;
+	}
+	td.total-cell {
+		text-align: right;
+		padding-right: 25px;
+	}
+	td.total-amount-cell {
+		text-align: center;
+	}
+	dl,
+	dt,
+	dd {
+		margin: 0;
+		padding: 0;
+	}
+	dt {
+		font-weight: bold;
+		font-size: 16px;
+	}
+	span.remove-item a {
+		font-size: 12px;
+		padding-left: 10px;
+	}
 }
 
 #error_explanation ul {
