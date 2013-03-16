@@ -18,7 +18,7 @@
           <dd><%= truncate strip_tags(product.description), :length => 150 %></dd>
         </dl>
       </td>
-      <td class="price-column"><%= product.price %></td>
+      <td class="price-column"><%= number_to_currency( product.price ) %></td>
       <td class="actions-column">
         <%= link_to '<i class="icon-search"></i>'.html_safe, product, :class => 'btn btn-small' %>
         <%= link_to '<i class="icon-pencil"></i>'.html_safe, edit_product_path(product), :class => 'btn btn-small' %>

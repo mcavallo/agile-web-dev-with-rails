@@ -1,0 +1,27 @@
+<div id="cart">
+
+  <h3>Your Cart</h3>
+
+  <% if cart.line_items.empty? %>
+
+  <p>Your cart is currently empty.</p>
+
+  <% else %>
+
+  <table>
+      <%=  render( cart.line_items ) %>
+      <tr class="total">
+        <td colspan="2">Total</td>
+        <td class="price"><%= number_to_currency( cart.total_price ) %></td>
+      </tr>
+  </table>
+
+  <div class="btn-pack">    
+    <%= button_to 'Empty Cart', cart, 
+      :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger btn-small', :remote => true %>
+    <%= link_to 'Checkout', '#', :class => 'btn btn-small' %>
+  </div>
+
+  <% end %>
+
+</div>

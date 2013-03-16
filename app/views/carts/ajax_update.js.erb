@@ -1,0 +1,12 @@
+$('#sidebar').html("<%= escape_javascript render(@cart) %>");
+
+<% unless @current_item.nil? %>
+
+var current_item = $("tr#cart-item-<%= @current_item.id %>");
+
+if ( current_item.size() )
+{
+	current_item.effect( 'highlight', { 'duration' : 1500 } );	
+}
+
+<% end %>

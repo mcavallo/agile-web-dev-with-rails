@@ -8,10 +8,12 @@
 	<% @products.each do |product| %>
 	<div class="product clearfix">
 		<h3><%= product.title %></h3>
-		<%= image_tag( product.image_url, :class => 'image' ) %>
+		<div class="image">
+			<%= image_tag( product.image_url ) %>
+			<div class="price"><%= number_to_currency(product.price) %></div>
+			<%= button_to 'Add to Cart', line_items_path(:product_id => product), :class => 'btn', :remote => true %>
+		</div>
 		<%= sanitize(product.description) %>
-		<div class="price"><%= number_to_currency(product.price) %></div>
-		<%= button_to 'Add to Cart', line_items_path(:product_id => product), :class => 'btn' %>
 	</div>
 	<% end %>
 </div>

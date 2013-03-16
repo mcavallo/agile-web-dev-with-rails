@@ -49,6 +49,17 @@ body {
   padding: 0;
 }
 
+/* Sidebar */
+
+#sidebar {
+  float: right;
+  width: 320px;
+}
+
+#content.with-sidebar {
+  width: 580px;
+}
+
 /* Footer */
 
 $footer_width: 60px;

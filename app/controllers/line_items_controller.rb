@@ -46,7 +46,11 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item.cart }
+        format.html { redirect_to store_url }
+        format.js {
+          @current_item = @line_item
+          render 'carts/ajax_update'
+        }
         format.json { render json: @line_item, status: :created, location: @line_item }
       else
         format.html { render action: "new" }
@@ -76,15 +80,13 @@ class LineItemsController < ApplicationController
   def destroy
     @cart = current_cart
     @line_item = LineItem.find(params[:id])
-    @line_item.destroy
+    @line_item = @cart.remove_product(@line_item.product_id)
 
     respond_to do |format|
-      format.html { 
-        if @cart.line_items.size > 0 
-          redirect_to cart_url(@cart), :notice => 'Product removed.'
-        else
-          redirect_to store_url, :notice => 'Your cart is currently empty.'
-        end
+      format.html { redirect_to store_url }
+      format.js   {
+        @current_item = @line_item
+        render 'carts/ajax_update'
       }
       format.json { head :no_content }
     end
